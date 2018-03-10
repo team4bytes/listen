@@ -16,13 +16,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { SpeechProcessingComponent } from './speech-processing/speech-processing.component';
 import { SpeechProcessingService } from './services/speech-processing.service';
+import { StoreComponent } from './store/store.component';
+import { StoreService } from './services/store.service';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListenComponent,
     ProductsComponent,
-    SpeechProcessingComponent
+    SpeechProcessingComponent,
+    StoreComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,7 @@ import { SpeechProcessingService } from './services/speech-processing.service';
     ),
     HttpClientModule
   ],
-  providers: [SpeechRecognitionService, ProductService, MessageService, SpeechProcessingService],
+  providers: [SpeechRecognitionService, ProductService, MessageService, SpeechProcessingService, StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

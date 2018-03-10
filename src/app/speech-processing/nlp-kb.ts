@@ -1,4 +1,4 @@
 export class NlpKB {
-    kbKeyString: string;
-    possibleOutcome: string;
+    classifier: string;
+    keyword: string;
 }

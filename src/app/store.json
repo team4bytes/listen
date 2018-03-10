@@ -1,50 +1,50 @@
 [
     {
-        "store_id": "1",
+        "storeid": "1",
         "name": "collect n go",
         "address": "kondapur",
-        "open time": "10:00",
-        "close time": "17:00",
-        "geo location": "17.443142 | 78.381303"
+        "opentime": "10:00",
+        "closetime": "17:00",
+        "geolocation": "17.443142 | 78.381303"
     },
     {
-        "store_id": "1",
+        "storeid": "1",
         "name": "collect n go",
         "address": "madhapur",
-        "open time": "09:00",
-        "close time": "17:00",
-        "geo location": "17.420869 | 78.790544"
+        "opentime": "09:00",
+        "closetime": "17:00",
+        "geolocation": "17.420869 | 78.790544"
     },
     {
-        "store_id": "1",
+        "storeid": "1",
         "name": "collect n go",
         "address": "gachibowli",
-        "open time": "10:00",
-        "close time": "18:00",
-        "geo location": "17.420869 | 78.790555"
+        "opentime": "10:00",
+        "closetime": "18:00",
+        "geolocation": "17.420869 | 78.790555"
     },
     {
-        "store_id": "1",
+        "storeid": "1",
         "name": "collect n go",
         "address": "ORR",
-        "open time": "10:00",
-        "close time": "17:00",
-        "geo location": "17.420870 | 78.790544"
+        "opentime": "10:00",
+        "closetime": "17:00",
+        "geolocation": "17.420870 | 78.790544"
     },
     {
-        "store_id": "1",
+        "storeid": "1",
         "name": "collect n go",
         "address": "opel",
-        "open time": "10:00",
-        "close time": "20:00",
-        "geo location": "17.420872 | 78.790645"
+        "opentime": "10:00",
+        "closetime": "20:00",
+        "geolocation": "17.420872 | 78.790645"
     },
     {
-        "store_id": "1",
+        "storeid": "1",
         "name": "collect n go",
         "address": "kukkatpalli",
-        "open time": "10:00",
-        "close time": "17:00",
-        "geo location": "17.420940 | 78.790655"
+        "opentime": "10:00",
+        "closetime": "17:00",
+        "geolocation": "17.420940 | 78.790655"
     }
 ]

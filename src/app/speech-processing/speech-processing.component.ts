@@ -1,68 +1,103 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SpeechProcessingService } from '../services/speech-processing.service';
 import { NlpKB } from './nlp-kb';
+import { SpeechRecognitionService } from '../services/speech-recognition.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-speech-processing',
   templateUrl: './speech-processing.component.html',
   styleUrls: ['./speech-processing.component.css']
 })
-export class SpeechProcessingComponent implements OnInit {
+export class SpeechProcessingComponent implements OnInit, OnDestroy {
   BrainJSClassifier = require('natural-brain');
-  classifier:any;
-  nlpKB: NlpKB[]=[];
+  classifier: any;
+  nlpKB: NlpKB[] = [];
   speechData: string;
-  constructor(private speechProcessingSvc:SpeechProcessingService) { }
+  showActivateButton: boolean = false;
+  constructor(private speechProcessingSvc: SpeechProcessingService, 
+    private speechRecognitionService: SpeechRecognitionService,
+    private router: Router) {
+    this.showActivateButton = true;
+    this.speechData = "";
+  }
 
   ngOnInit() {
-    // var BrainJSClassifier = require('natural-brain');
-this.classifier = new this.BrainJSClassifier();
-console.log(this.classifier);
-this.classifier.addDocument('can you play some new music?', 'music');
-this.getNlpKB();
-/* this.classifier.addDocument('can you play some new music?', 'music');
-
-this.classifier.train(); */
-
-/* this.classifier.addDocument('my unit-tests failed.', 'software-failed');
-this.classifier.addDocument('my unit-tests passed.', 'software-passed');
-this.classifier.addDocument('tried the program, but it was buggy.', 'software');
-this.classifier.addDocument('tomorrow we will do standup.', 'meeting');
-this.classifier.addDocument('the drive has a 2TB capacity.', 'hardware');
-this.classifier.addDocument('i need a new power supply.', 'hardware');
-this.classifier.addDocument('can you play some new music?', 'music'); */
-
-
-
-/* console.log(this.classifier.classify('test passed?')); // -> software
-console.log(this.classifier.classify('did you buy a new drive?')); // -> hardware
-console.log(this.classifier.classify('What is the capacity?')); // -> hardware
-console.log(this.classifier.classify('Lets meet tomorrow?')); // -> meeting
-console.log(this.classifier.classify('Can you play some stuff?')); // -> music */
+    this.classifier = new this.BrainJSClassifier();
+    console.log(this.classifier);
+    this.getNlpKB();
   }
 
-  
+  ngOnDestroy() {
+    this.speechRecognitionService.DestroySpeechObject();
+  }
+
+  activateSpeechSearch(): void {
+    this.showActivateButton = false;
+
+    this.speechRecognitionService
+      .record()
+
+      .subscribe(
+        //listener
+
+        value => {
+          this.speechData = value;
+          console.log(value);
+        },
+
+        //errror
+
+        err => {
+          console.log(err);
+
+          if (err.error == "no-speech") {
+            console.log("--restatring service--");
+
+            this.activateSpeechSearch();
+          }
+        },
+
+        //completion
+
+        () => {
+          this.showActivateButton = true;
+
+          console.log("--complete--");
+
+          this.activateSpeechSearch();
+        }
+      );
+  }
+
+
   getNlpKB(): void {
     this.speechProcessingSvc.getNlpKB()
-        .subscribe(
-          nlpKB => {
-            this.nlpKB = nlpKB;
-            console.log(this.nlpKB)
-            for(let nlpkbrow of this.nlpKB){
-              console.log(nlpkbrow.possibleOutcome);
-              this.classifier.addDocument(nlpkbrow.kbKeyString, nlpkbrow.possibleOutcome);
-            }
-            console.log(this.classifier);
-            this.classifier.train();
-          },
-          
-        );
-        
+      .subscribe(
+        nlpKB => {
+          this.nlpKB = nlpKB;
+          console.log(this.nlpKB)
+          for (let nlpkbrow of this.nlpKB) {
+            console.log(nlpkbrow.keyword);
+            this.classifier.addDocument(nlpkbrow.classifier, nlpkbrow.keyword);
+          }
+          console.log(this.classifier);
+          this.classifier.train();
+        },
+
+    );
+
   }
 
-  search(): void{
-    // this.classifier.train();
-    console.log(this.classifier.classify(this.speechData)); // -> software
+  search(): void {
+    let outcome = this.classifier.classify(this.speechData);
+    if(outcome === 'stores'){
+      this.router.navigate(['/store']);
+    }
+    if(outcome === 'logout'){
+      this.router.navigate(['/logout']);
+    }
+    console.log(outcome); // -> software
   }
 }
 

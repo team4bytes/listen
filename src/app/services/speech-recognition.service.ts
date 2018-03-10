@@ -58,7 +58,7 @@ export class SpeechRecognitionService {
     }
 
     DestroySpeechObject() {
-        this.speechRecognition.abort();
+        // this.speechRecognition.abort();
         if (this.speechRecognition)
             this.speechRecognition.stop();
     }

@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">{{pageTitle}}</div>
+  <div class="panel-body">
+    <div class="header">
+      <h4 class="title">{{msg}}</h4>
+    </div>
+    <div class="table-responsive">
+      <table class="table" *ngIf='storeData && storeData.length'>
+        <thead>
+
+          <th>Store</th>
+          <th>Address</th>
+          <th>Open Time</th>
+          <th>Close Time</th>
+        </thead>
+        <tbody>
+          <tr *ngFor='let store of storeData'>
+
+            <td>
+
+              {{store.name}}
+
+            </td>
+            <td> {{store.address}}</td>
+            <td> {{store.opentime}}</td>
+            <td> {{store.closetime}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
