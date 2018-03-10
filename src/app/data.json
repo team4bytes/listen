@@ -79,5 +79,14 @@
         "NETWEIGHT": "400gm",
         "IMAGE_URL": "https://www.bigbasket.com/media/uploads/p/s/40013625_2-fresho-bread-brown-chemical-free.jpg",
         "keywords": "bread, brown bread"
+    },
+    {
+        "SHORT_NAME": "Fresho Bread - Brown, Chemical Free, 400 gm",
+        "DESCRIPTION": "Brown bread made from whole wheat flour and not enriched flour. It is high on fibre and its colour comes from a mixture of flours. Its great tasting and goes well with all types of sandwiches.",
+        "PRICE": "0.99",
+        "BRAND_NAME": "FRESHO",
+        "NETWEIGHT": "400gm",
+        "IMAGE_URL": "https://www.bigbasket.com/media/uploads/p/s/40013625_2-fresho-bread-brown-chemical-free.jpg",
+        "keywords": "bread, brown bread"
     }
 ]
