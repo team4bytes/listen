@@ -1,27 +1,34 @@
-<!-- <h2>{{ product.name|uppercase }} Details</h2>
-<div><span>id: </span>{{product.id}}</div>
-<div><span>name: </span>{{product.name}}</div> -->
-
-<h2>All Products</h2>
-
-<!-- <div>
-  <label>Product name:
-    <input #productName />
-  </label>
-  <!-- (click) passes input value to add() and then clears the input -->
-  <!-- <button (click)="add(productName.value); productName.value=''">
-    add
-  </button>
-</div> -->
-
-
-<ul class="products">
-  <!-- <li *ngFor="let product of products">
-    <a routerLink="/detail/{{product.id}}">
-      <span class="badge">{{product.id}}</span> {{product.name}}
-    </a>
-    <!-- <button class="delete" title="delete product"
-    (click)="delete(product)">x</button> -->
-  </li> -->
-</ul>
-  
+<div class="panel panel-primary">
+  <div class="panel-heading">{{pageTitle}}</div>
+  <div class="panel-body">
+    <div class="header">
+      <h4 class="title">{{msg}}</h4>
+  </div>
+      <div class="table-responsive">
+          <table class="table" *ngIf='products && products.length'>
+              <thead>
+                  
+                  <th>Product</th>
+                  <th>Description</th>
+                  <th>Brand</th>
+                  <th>Price</th>
+                  <th>weight</th>
+              </thead>
+              <tbody>
+                  <tr *ngFor='let product of products'>
+                      
+                      <td>
+                          
+                              {{product.short_name}}
+                         
+                      </td>
+                      <td>{{product.description}}</td>
+                      <td>{{product.brand_name}}</td>
+                      <td>{{product.price}}</td>
+                      <td>{{product.netweight}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
