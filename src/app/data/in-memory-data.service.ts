@@ -95,18 +95,11 @@ export class InMemoryDataService implements InMemoryDbService {
           "keywords": "bread, brown bread"
       }
   ]
-    // [
-    //   { id: 11, name: 'samsung s8' },
-    //   { id: 12, name: 'hp laptop' },
-    //   { id: 13, name: 'pendrive' },
-    //   { id: 14, name: 'charger' },
-    //   { id: 15, name: 'marshmallow' },
-    //   { id: 16, name: 'pizza' },
-    //   { id: 17, name: 'book' },
-    //   { id: 18, name: 'coke' },
-    //   { id: 19, name: 'pencil' },
-    //   { id: 20, name: 'bean bag' }
-    // ];
-    return {products};
+
+  const nlpKB = [
+      {"my unit-tests failed.":"software-failed"},
+  ];
+
+    return {products, nlpKB};
   }
 }

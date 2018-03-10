@@ -14,12 +14,15 @@ import { InMemoryDataService } from './data/in-memory-data.service';
 import { ProductService } from './product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from './message.service';
+import { SpeechProcessingComponent } from './speech-processing/speech-processing.component';
+import { SpeechProcessingService } from './services/speech-processing.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListenComponent,
-    ProductsComponent
+    ProductsComponent,
+    SpeechProcessingComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { MessageService } from './message.service';
     ),
     HttpClientModule
   ],
-  providers: [SpeechRecognitionService, ProductService, MessageService],
+  providers: [SpeechRecognitionService, ProductService, MessageService, SpeechProcessingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
