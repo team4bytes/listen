@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './products';
 import { ProductService } from '../product.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
+  templateUrl: './product-list.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
@@ -19,10 +20,15 @@ export class ProductsComponent implements OnInit {
  
   products: Product[];
  
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private route:ActivatedRoute) { }
  
   ngOnInit() {
-    this.getProducts();
+    let searchKey = this.route.snapshot.paramMap.get('key');
+    this.productService.searchProducts(searchKey).subscribe(
+      products => this.products = products,
+      
+    );
+    // this.getProducts();
   }
  
   // onSelect(product: Product): void {
@@ -32,21 +38,22 @@ export class ProductsComponent implements OnInit {
   getProducts(): void {
     this.productService.getProducts()
         .subscribe(products => this.products = products);
+        console.log(this.products);
   }
 
   
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.productService.addProduct({ name } as Product)
-      .subscribe(product => {
-        this.products.push(product);
-      });
-  }
+  // add(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   this.productService.addProduct({ name } as Product)
+  //     .subscribe(product => {
+  //       this.products.push(product);
+  //     });
+  // }
  
-  delete(product: Product): void {
-    this.products = this.products.filter(h => h !== product);
-    this.productService.deleteProduct(product).subscribe();
-  }
+  // delete(product: Product): void {
+  //   this.products = this.products.filter(h => h !== product);
+  //   this.productService.deleteProduct(product).subscribe();
+  // }
 
 }

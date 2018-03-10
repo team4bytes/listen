@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">{{pageTitle}}</div>
+    <div class="panel-body">
+        
+        <div class="table-responsive">
+            <table class="table" *ngIf='products && products.length'>
+                <thead>
+                    
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>weight</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products'>
+                        
+                        <td>
+                            
+                                {{product.short_name}}
+                           
+                        </td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.brand_name}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.netweight}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

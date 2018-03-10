@@ -30,27 +30,27 @@ export class ProductService {
   }
  
   /** GET product by id. Return `undefined` when id not found */
-  getProductNo404<Data>(id: number): Observable<Product> {
-    const url = `${this.productsUrl}/?id=${id}`;
-    return this.http.get<Product[]>(url)
-      .pipe(
-        map(products => products[0]), // returns a {0|1} element array
-        tap(h => {
-          const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} product id=${id}`);
-        }),
-        catchError(this.handleError<Product>(`getProduct id=${id}`))
-      );
-  }
+  // getProductNo404<Data>(id: number): Observable<Product> {
+  //   const url = `${this.productsUrl}/?id=${id}`;
+  //   return this.http.get<Product[]>(url)
+  //     .pipe(
+  //       map(products => products[0]), // returns a {0|1} element array
+  //       tap(h => {
+  //         const outcome = h ? `fetched` : `did not find`;
+  //         this.log(`${outcome} product id=${id}`);
+  //       }),
+  //       catchError(this.handleError<Product>(`getProduct id=${id}`))
+  //     );
+  // }
  
-  /** GET Product by id. Will 404 if id not found */
-  getProduct(id: number): Observable<Product> {
-    const url = `${this.productsUrl}/${id}`;
-    return this.http.get<Product>(url).pipe(
-      tap(_ => this.log(`fetched product id=${id}`)),
-      catchError(this.handleError<Product>(`getProduct id=${id}`))
-    );
-  }
+  // /** GET Product by id. Will 404 if id not found */
+  // getProduct(id: number): Observable<Product> {
+  //   const url = `${this.productsUrl}/${id}`;
+  //   return this.http.get<Product>(url).pipe(
+  //     tap(_ => this.log(`fetched product id=${id}`)),
+  //     catchError(this.handleError<Product>(`getProduct id=${id}`))
+  //   );
+  // }
  
   /* GET products whose name contains search term */
   searchProducts(term: string): Observable<Product[]> {
@@ -58,7 +58,7 @@ export class ProductService {
       // if not search term, return empty product array.
       return of([]);
     }
-    return this.http.get<Product[]>(`api/products/?name=${term}`).pipe(
+    return this.http.get<Product[]>(`api/products/?short_name=${term}`).pipe(
       tap(_ => this.log(`found products matching "${term}"`)),
       catchError(this.handleError<Product[]>('searchProducts', []))
     );
@@ -66,32 +66,32 @@ export class ProductService {
  
   //////// Save methods //////////
  
-  /** POST: add a new product to the server */
-  addProduct (product: Product): Observable<Product> {
-    return this.http.post<Product>(this.productsUrl, product, httpOptions).pipe(
-      tap((product: Product) => this.log(`added product w/ id=${product.id}`)),
-      catchError(this.handleError<Product>('addProduct'))
-    );
-  }
+  // /** POST: add a new product to the server */
+  // addProduct (product: Product): Observable<Product> {
+  //   return this.http.post<Product>(this.productsUrl, product, httpOptions).pipe(
+  //     tap((product: Product) => this.log(`added product w/ id=${product.id}`)),
+  //     catchError(this.handleError<Product>('addProduct'))
+  //   );
+  // }
  
-  /** DELETE: delete the product from the server */
-  deleteProduct (product: Product | number): Observable<Product> {
-    const id = typeof product === 'number' ? product : product.id;
-    const url = `${this.productsUrl}/${id}`;
+  // /** DELETE: delete the product from the server */
+  // deleteProduct (product: Product | number): Observable<Product> {
+  //   const id = typeof product === 'number' ? product : product.id;
+  //   const url = `${this.productsUrl}/${id}`;
  
-    return this.http.delete<Product>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted product id=${id}`)),
-      catchError(this.handleError<Product>('deleteProduct'))
-    );
-  }
+  //   return this.http.delete<Product>(url, httpOptions).pipe(
+  //     tap(_ => this.log(`deleted product id=${id}`)),
+  //     catchError(this.handleError<Product>('deleteProduct'))
+  //   );
+  // }
  
-  /** PUT: update the product on the server */
-  updateProduct (product: Product): Observable<any> {
-    return this.http.put(this.productsUrl, product, httpOptions).pipe(
-      tap(_ => this.log(`updated product id=${product.id}`)),
-      catchError(this.handleError<any>('updateProduct'))
-    );
-  }
+  // /** PUT: update the product on the server */
+  // updateProduct (product: Product): Observable<any> {
+  //   return this.http.put(this.productsUrl, product, httpOptions).pipe(
+  //     tap(_ => this.log(`updated product id=${product.id}`)),
+  //     catchError(this.handleError<any>('updateProduct'))
+  //   );
+  // }
  
   /**
    * Handle Http operation that failed.
