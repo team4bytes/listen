@@ -67,6 +67,8 @@ export class ListenComponent implements OnInit, OnDestroy {
   }
 
   search(): void{
+    if(this.showSearchButton){
       console.log('inside search');
+    }
   }
 }
