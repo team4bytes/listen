@@ -1,0 +1,166 @@
+[
+    {
+        "classifier": "logout",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "log out",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "log me out",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "bye",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "bye bye",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "sign off",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "sign out",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "sign me out",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "log off",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "log me off",
+        "keyword": "logout"
+    },
+    {
+        "classifier": "Search watches",
+        "keyword": "watch"
+    },
+    {
+        "classifier": "Find me watches",
+        "keyword": "watch"
+    },
+    {
+        "classifier": "how about some watches?",
+        "keyword": "watch"
+    },
+    {
+        "classifier": "watches",
+        "keyword": "watch"
+    },
+    {
+        "classifier": "show me watches",
+        "keyword": "watch"
+    },
+    {
+        "classifier": "find me cereals",
+        "keyword": "breakfast cereal"
+    },
+    {
+        "classifier": "show me cereals",
+        "keyword": "breakfast cereal"
+    },
+    {
+        "classifier": "search cereals",
+        "keyword": "breakfast cereal"
+    },
+    {
+        "classifier": "find cereals",
+        "keyword": "breakfast cereal"
+    },
+    {
+        "classifier": "how about some watches",
+        "keyword": "breafast cereal"
+    },
+    {
+        "classifier": "find hand soap",
+        "keyword": "hand soap"
+    },
+    {
+        "classifier": "search hand soap",
+        "keyword": "hand soap"
+    },
+    {
+        "classifier": "show me hand soaps",
+        "keyword": "hand soap"
+    },
+    {
+        "classifier": "how about some hand soap",
+        "keyword": "hand soap"
+    },
+    {
+        "classifier": "bread spread",
+        "keyword": "bread spread"
+    },
+    {
+        "classifier": "find me bread spread",
+        "keyword": "bread spread"
+    },
+    {
+        "classifier": "find me nutella",
+        "keyword": "nutella"
+    },
+    {
+        "classifier": "find some wine",
+        "keyword": "wine"
+    },
+    {
+        "classifier": "suggest me some wine",
+        "keyword": "wine"
+    },
+    {
+        "classifier": "show me some wines",
+        "keyword": "wine"
+    },
+    {
+        "classifier": "can you find some wine",
+        "keyword": "wine"
+    },
+    {
+        "classifier": "show me my last orders",
+        "keyword": "purchaseHistory"
+    },
+    {
+        "classifier": "what did I order last time",
+        "keyword": "purchaseHistory"
+    },
+    {
+        "classifier": "show me my purchase history",
+        "keyword": "purchaseHistory"
+    },
+    {
+        "classifier": "purchase history",
+        "keyword": "purchaseHistory"
+    },
+    {
+        "classifier": "show me purchase history",
+        "keyword": "purchaseHistory"
+    },
+    {
+        "classifier": "near by collect and go outlet",
+        "keyword": "stores"
+    },
+    {
+        "classifier": "find stores near me",
+        "keyword": "stores"
+    },
+    {
+        "classifier": "search stores near by",
+        "keyword": "stores"
+    },
+    {
+        "classifier": "search stores near me",
+        "keyword": "stores"
+    },
+    {
+        "classifier": "stores near me",
+        "keyword": "stores"
+    }
+]
