@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { SpeechRecognitionService } from "../services/speech-recognition.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: "app-listen",
@@ -12,9 +13,8 @@ export class ListenComponent implements OnInit, OnDestroy {
 
   speechData: string;
 
-  constructor(private speechRecognitionService: SpeechRecognitionService) {
+  constructor(private speechRecognitionService: SpeechRecognitionService, private router: Router) {
     this.showActivateButton = true;
-    this.showSearchButton = false;
 
     this.speechData = "";
   }
@@ -38,7 +38,6 @@ export class ListenComponent implements OnInit, OnDestroy {
 
         value => {
           this.speechData = value;
-          this.showSearchButton = true;
           console.log(value);
         },
 
@@ -67,8 +66,9 @@ export class ListenComponent implements OnInit, OnDestroy {
   }
 
   search(): void{
-    if(this.showSearchButton){
+    if(!!this.speechData){
+      this.router.navigate(['/result/'+this.speechData]);
       console.log('inside search');
-    }
+  }
   }
 }
