@@ -97,7 +97,7 @@ export class InMemoryDataService implements InMemoryDbService {
   ]
 
   const nlpKB = [
-      {"my unit-tests failed.":"software-failed"},
+      {"kbKeyString":"my unit-tests failed.", "possibleOutcome":"software-failed"}
   ];
 
     return {products, nlpKB};

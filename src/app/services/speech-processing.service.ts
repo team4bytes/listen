@@ -19,7 +19,7 @@ export class SpeechProcessingService {
   getNlpKB (): Observable<NlpKB[]> {
     return this.http.get<NlpKB[]>(this.nlpKBUrl)
       .pipe(
-        tap(kbs => this.log(`fetched Products`)),
+        tap(kbs => this.log(`fetched NLP_KB`)),
         catchError(this.handleError('getNlpKB', []))
       );
   }

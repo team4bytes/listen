@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './product-list.component.html',
+  templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
@@ -19,13 +19,20 @@ export class ProductsComponent implements OnInit {
   // selectedProduct: Product;
  
   products: Product[];
+  msg:string;
  
   constructor(private productService: ProductService, private route:ActivatedRoute) { }
  
   ngOnInit() {
     let searchKey = this.route.snapshot.paramMap.get('key');
     this.productService.searchProducts(searchKey).subscribe(
-      products => this.products = products,
+      products => {
+        this.products = products;
+        if(this.products.length == 0){
+          console.log(this.products);
+          this.msg = 'Nothing found';
+        }
+      },
       
     );
     // this.getProducts();

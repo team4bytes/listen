@@ -2,43 +2,39 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <div class="container-fluid">
-  <div class="row">
-      <div class="col-lg-12 col-md-12">
-          <div class="card">
-              <div class="header">
-                  <h4 class="title">&nbsp;&nbsp; Hello Speak...</h4>
-              </div>
-              <div class="content">
-                  <div class="row">
-                      <div class="col-md-2"></div>
-                      <div class="col-md-8">
-                          <div class="form-group">
-                              
-                              <div class="input-group">
-                                      <input type="text" placeholder="Speak something...." class="form-control" id="speech" name="txtSpeechSearch" id="txtSpeechSearch"
-                                      value="" [(ngModel)]="speechData">
-                                  <!-- <textarea class="form-control" aria-label="With textarea" ></textarea> -->
-                                  <button class="btn btn-info btn-fill btn-wd" name="btnActivateSpeech" id="btnActivateSpeech" (click)="activateSpeechSearch()"
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">&nbsp;&nbsp; Hello Speak...</h4>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+
+                                <div class="input-group">
+                                    <input type="text" placeholder="Speak something...." class="form-control" id="speech" name="txtSpeechSearch" id="txtSpeechSearch"
+                                        value="" [(ngModel)]="speechData">
+                                    <!-- <button class="btn btn-info btn-fill btn-wd" name="btnActivateSpeech" id="btnActivateSpeech" (click)="activateSpeechSearch()"
                                           [disabled]="!showActivateButton">
                                           Enable Speech Search
-                                      </button>
-                                  <!-- <div class="input-group-prepend">
-                                      <span class="input-group-text">With textarea</span>
-                                  </div> -->
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-2"></div>
-                  </div>
-                  <br />
-                  <div class="text-center">
-                      <button class="btn btn-info btn-fill btn-wd" name="btnSearch" id="btnSearch" (click)="search()" [disabled]="!showSearchButton">
-                          Search
-                      </button>
-                  </div>
-                  <br />
-              </div>
-          </div>
-      </div>
-  </div>
+                                      </button> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <button class="btn btn-info btn-fill btn-wd" name="btnSearch" id="btnSearch" (click)="search()">
+                            Search
+                        </button>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

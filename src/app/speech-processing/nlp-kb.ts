@@ -1,4 +1,4 @@
-export interface NlpKB {
-    kbKeyString: string,
-    possibleOutcome: string
+export class NlpKB {
+    kbKeyString: string;
+    possibleOutcome: string;
 }
