@@ -90,6 +90,7 @@ export class SpeechProcessingComponent implements OnInit, OnDestroy {
   }
 
   search(): void {
+    if(!!this.speechData){
     let outcome = this.classifier.classify(this.speechData);
     if(outcome === 'stores'){
       this.router.navigate(['/store']);
@@ -98,6 +99,7 @@ export class SpeechProcessingComponent implements OnInit, OnDestroy {
       this.router.navigate(['/logout']);
     }
     console.log(outcome); // -> software
+  }
   }
 }
 
