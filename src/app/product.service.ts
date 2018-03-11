@@ -58,7 +58,18 @@ export class ProductService {
       // if not search term, return empty product array.
       return of([]);
     }
-    return this.http.get<Product[]>(`api/products/?short_name=${term}`).pipe(
+    return this.http.get<Product[]>(`api/products/?keywords=${term}`).pipe(
+      tap(_ => this.log(`found products matching "${term}"`)),
+      catchError(this.handleError<Product[]>('searchProducts', []))
+    );
+  }
+
+  filterProducts(term: string): Observable<Product[]> {
+    if (!term.trim()) {
+      // if not search term, return empty product array.
+      return of([]);
+    }
+    return this.http.get<Product[]>(`api/products/?brand_name=${term}`).pipe(
       tap(_ => this.log(`found products matching "${term}"`)),
       catchError(this.handleError<Product[]>('searchProducts', []))
     );
