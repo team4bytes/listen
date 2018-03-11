@@ -23,7 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 "keywords": "corn flakes, kellogg's,breakfast cereal"
             },
             {
-                "short_name": "DETTOL hand soap",
+                "short_name": "Dettol hand soap",
                 "description": "hand soap No-Touch ass.",
                 "price": "4.05",
                 "brand_name": "DETTOL",
@@ -32,7 +32,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 "keywords": "dettol, hand soap"
             },
             {
-                "short_name": "DETTOL hand soap",
+                "short_name": "Dettol liquid soap",
                 "description": "hand soap No-Touch ass.",
                 "price": "4.05",
                 "brand_name": "DETTOL",
@@ -82,7 +82,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 "price": "599.99",
                 "brand_name": "fossil",
                 "netweight": "175g",
-                "image_url": "https: //rukminim1.flixcart.com/image/312/312/watch/z/k/e/ch2647-fossil-original-imadje2whf6z8ygv.jpeg?q=70",
+                "image_url": "https://rukminim1.flixcart.com/image/312/312/watch/z/k/e/ch2647-fossil-original-imadje2whf6z8ygv.jpeg?q=70",
                 "keywords": "watch,fossil"
             },
             {
