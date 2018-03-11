@@ -131,7 +131,7 @@ export const productData = [
         "price": "599.99",
         "brand_name": "fossil",
         "netweight": "175g",
-        "image_url": "https: //rukminim1.flixcart.com/image/312/312/watch/z/k/e/ch2647-fossil-original-imadje2whf6z8ygv.jpeg?q=70",
+        "image_url": "https://rukminim1.flixcart.com/image/312/312/watch/z/k/e/ch2647-fossil-original-imadje2whf6z8ygv.jpeg?q=70",
         "keywords": "fossil"
     },
     {
